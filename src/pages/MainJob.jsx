@@ -140,7 +140,7 @@ const jobLoader = async ({ params }) => {
   const res = await fetch('https://api.jsonbin.io/v3/b/688f995ff7e7a370d1f2f39e');
   const data = await res.json();
 
-  const job = data.record.find(job => job.id == params.id); 
+const job = (data.record.jobs || []).find(job => job.id == params.id);
   return job;
 };
 
