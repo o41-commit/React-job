@@ -12,7 +12,7 @@ import EdithJobPage from './pages/EdithJobPage';
  const App = () => {
   // ADD NEW JOB
   const addJob = async(newJob) => {
-    const res = await fetch('https://gist.githubusercontent.com/o41-commit/75bf8df241a4a8622cc156b3b2f3095b/raw/690c91bc3d2e1e97a3159f1095c0db64c0ec37a6/jobs.json', {
+    const res = await fetch('https://api.jsonbin.io/v3/b/688f995ff7e7a370d1f2f39e', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
