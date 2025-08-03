@@ -12,10 +12,11 @@ useEffect(() => {
     try {
       const res = await fetch('https://api.jsonbin.io/v3/b/688f995ff7e7a370d1f2f39e');
       const data = await res.json();
+      
+      const allJobs = data.record;
+      const jobsToDisplay = isHome ? allJobs.slice(0, 3) : allJobs;
 
-    
-      const jobs = isHome ? data.record.slice(0, 3) : data.record;
-      setjobs(jobs);
+      setjobs(jobsToDisplay);
     } catch (error) {
       console.error('Error fetching jobs:', error);
     } finally {
@@ -25,6 +26,7 @@ useEffect(() => {
 
   fetchJobs();
 }, []);
+
 
   })
   return (
