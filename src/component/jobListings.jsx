@@ -13,7 +13,7 @@ useEffect(() => {
       const res = await fetch('https://api.jsonbin.io/v3/b/688f995ff7e7a370d1f2f39e');
       const data = await res.json();
       
-      const allJobs = data.record;
+      const allJobs = data.record.jobs || [];
       const jobsToDisplay = isHome ? allJobs.slice(0, 3) : allJobs;
 
       setjobs(jobsToDisplay);
@@ -28,7 +28,7 @@ useEffect(() => {
 }, []);
 
 
-  })
+  
   return (
     <section className="bg-blue-50 px-4 py-10">
       <div className="container-xl lg:container m-auto">
